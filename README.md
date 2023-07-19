@@ -12,7 +12,23 @@
 
 👤 **Jelle Kuebler**
 
+## Example
 
+from time import sleep
+from tests.profiling import profile
+
+@profile(repeat=100)
+
+def example() -> None:
+
+    for iteration in range(100):
+
+        print("Happy profiling")
+
+        sleep(0.001)
+if __name__ == "__main__":
+
+    example()
 ## Show your support
 
 Give a ⭐️ if this project helped you!
