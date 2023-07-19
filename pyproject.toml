@@ -1,0 +1,33 @@
+[project]
+name = "profileme"
+version = "0.1.0"
+description = "Create a pyproject.toml file for an existing project."
+authors = [
+    {name = "Jelle Kuebler", email="jelle.kuebler@kit.edu"},
+]
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+
+classifiers = [
+    "Topic :: Software Development"
+]
+
+# Requirements: This is done differently by poetry!
+dependencies = [
+    "Click>=7.0"
+]
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[project.optional-dependencies]
+dev = [
+    "black>=18.3-alpha.0",
+]
+
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+
