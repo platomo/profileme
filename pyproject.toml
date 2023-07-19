@@ -1,7 +1,7 @@
 [project]
 dynamic = ["dependencies"]
 name = "profileme"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Create a pyproject.toml file for an existing project."
 authors = [
     {name = "Jelle Kuebler", email="jelle.kuebler@kit.edu"},
