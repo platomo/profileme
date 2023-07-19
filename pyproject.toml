@@ -30,3 +30,5 @@ line-length = 88
 
 [tool.hatch.metadata]
 allow-direct-references = true
+[tool.setuptools-git-versioning]
+enabled = true
