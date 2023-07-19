@@ -13,8 +13,9 @@
 👤 **Jelle Kuebler**
 
 ## Example
-
+```python
 from time import sleep
+
 from tests.profiling import profile
 
 @profile(repeat=100)
@@ -29,6 +30,7 @@ def example() -> None:
 if __name__ == "__main__":
 
     example()
+```
 ## Show your support
 
 Give a ⭐️ if this project helped you!
