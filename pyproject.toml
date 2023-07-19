@@ -1,21 +1,18 @@
 [project]
+dynamic = ["dependencies"]
 name = "profileme"
 version = "0.1.0"
 description = "Create a pyproject.toml file for an existing project."
 authors = [
     {name = "Jelle Kuebler", email="jelle.kuebler@kit.edu"},
 ]
-license = {file = "LICENSE.txt"}
+license = {file = "LICENSE"}
 readme = "README.md"
 
 classifiers = [
     "Topic :: Software Development"
 ]
 
-# Requirements: This is done differently by poetry!
-dependencies = [
-    "Click>=7.0"
-]
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]
 
@@ -31,3 +28,5 @@ build-backend = "hatchling.build"
 [tool.black]
 line-length = 88
 
+[tool.hatch.metadata]
+allow-direct-references = true
