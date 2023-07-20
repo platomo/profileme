@@ -16,7 +16,8 @@
 ## Example
 
 ```python
-from profileme import profile
+from profileme import ProfilePlotter, profile
+
 
 @profile(
     repeat=1000,
@@ -35,12 +36,15 @@ def fibonacci_loop(num: int) -> int:
 
     return last
 
+
 @profile(
     repeat=100,
     profiler_kwargs=dict(warmup=10),
     writer_kwargs=dict(write_console=True),
 )
-def fibonacci_recursive_wrapper(num: int) -> int:  # profiling recursive method requires wrapper
+def fibonacci_recursive_wrapper(
+    num: int,
+) -> int:  # profiling recursive method requires wrapper
     return fibonacci_recursive(num)
 
 
