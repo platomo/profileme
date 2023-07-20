@@ -14,24 +14,55 @@
 👤 **Jelle Kuebler**
 
 ## Example
+
 ```python
-from time import sleep
+from profileme import ProfilePlotter, profile
 
-from profileme import profile
 
-@profile(repeat=100)
+@profile(
+    repeat=1000,
+    profiler_kwargs=dict(warmup=10),
+    writer_kwargs=dict(write_console=True),
+)
+def fibonacci_loop(num: int) -> int:
+    if num == 0:
+        return 0
 
-def example() -> None:
+    second_to_last = 0
+    last = 1
 
-    for iteration in range(100):
+    for _ in range(1, num):
+        second_to_last, last = last, second_to_last + last
 
-        print("Happy profiling")
+    return last
 
-        sleep(0.001)
+
+@profile(
+    repeat=100,
+    profiler_kwargs=dict(warmup=10),
+    writer_kwargs=dict(write_console=True),
+)
+def fibonacci_recursive_wrapper(
+    num: int,
+) -> int:  # profiling recursive method requires wrapper
+    return fibonacci_recursive(num)
+
+
+def fibonacci_recursive(num: int) -> int:
+    if num <= 1:
+        return num
+    else:
+        return fibonacci_recursive(num - 1) + fibonacci_recursive(num - 2)
+
+
 if __name__ == "__main__":
-
-    example()
+    fibonacci_recursive_wrapper(4)
+    fibonacci_loop(4)
+    ProfilePlotter(log=True, column="cumtime", type="all", call_depth=20).update_plots(
+        "profiles", recursive=True
+    )
 ```
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
