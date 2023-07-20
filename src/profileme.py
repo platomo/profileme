@@ -654,7 +654,7 @@ class Profiler:
 @profile(
     repeat=1000, profiler_kwargs=dict(warmup=10), writer_kwargs=dict(write_console=True)
 )
-def fib_iter(num: int) -> int:
+def fibonacci_loop(num: int) -> int:
     if num == 0:
         return 0
 
@@ -665,22 +665,3 @@ def fib_iter(num: int) -> int:
         second_to_last, last = last, second_to_last + last
 
     return last
-
-
-@profile(
-    repeat=100, profiler_kwargs=dict(warmup=10), writer_kwargs=dict(write_console=True)
-)
-def fib_rec_wrap(num: int) -> int:  # profiling recursive method requires wrapper
-    return fib_rec(num)
-
-
-def fib_rec(num: int) -> int:
-    return num if num <= 1 else fib_rec(num - 1) + fib_rec(num - 2)
-
-
-if __name__ == "__main__":
-    fib_rec_wrap(4)
-    fib_iter(4)
-    ProfilePlotter(log=True, column="cumtime", type="all", call_depth=20).update_plots(
-        "profiles", recursive=True
-    )
