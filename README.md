@@ -1,8 +1,7 @@
-<h1 align="center">Welcome to ProfileMe</h1>
+<h1 align="center">Welcome to Profile Me 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://fsf.org/" target="_blank">
-    <img alt="License: GNU GENERAL PUBLIC LICENSE" src="https://img.shields.io/badge/License-GNU GENERAL PUBLIC LICENSE-yellow.svg" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT License" src="https://img.shields.io/badge/License-MIT License-yellow.svg" />
   </a>
 </p>
 
@@ -16,7 +15,7 @@
 ```python
 from time import sleep
 
-from tests.profiling import profile
+from profileme import profile
 
 @profile(repeat=100)
 
@@ -37,6 +36,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-This project is [GNU GENERAL PUBLIC LICENSE](https://fsf.org/) licensed.
+This project is [MIT] licensed.
 
 ***
