@@ -3,10 +3,9 @@
 <p>
   <a href="#" target="_blank">
     <img alt="License: MIT License" src="https://img.shields.io/badge/License-MIT License-yellow.svg" />
+    <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/platomo/profileme">
   </a>
 </p>
-
-![GitHub release (with filter)](https://img.shields.io/github/v/release/platomo/profileme)
 
 > library for profiling
 
