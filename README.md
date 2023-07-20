@@ -36,6 +36,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-This project is [MIT] licensed.
+This project is licensed under the MIT License. For more details, please refer to the [LICENSE](LICENSE.md) file.
 
 ***
