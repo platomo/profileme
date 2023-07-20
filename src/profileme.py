@@ -647,21 +647,3 @@ class Profiler:
                     return results[self._result]
 
         return profiling_wrapper
-
-
-#  ##################################################
-# version1
-@profile(
-    repeat=1000, profiler_kwargs=dict(warmup=10), writer_kwargs=dict(write_console=True)
-)
-def fibonacci_loop(num: int) -> int:
-    if num == 0:
-        return 0
-
-    second_to_last = 0
-    last = 1
-
-    for _ in range(1, num):
-        second_to_last, last = last, second_to_last + last
-
-    return last
