@@ -1,3 +1,5 @@
+![GitHub release (with filter)](https://img.shields.io/github/v/release/platomo/profileme)
+
 <h1 align="center">Welcome to Profile Me 👋</h1>
 <p>
   <a href="#" target="_blank">
